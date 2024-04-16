@@ -22,10 +22,10 @@ else:
     exit(1)
 
 # get http url & token
-ini_file ="/home/pranayraj/.d3x.ini"
+ini_file = "/userdata/.d3x.ini"
 config.read(ini_file)
 url = config.get(param1,"url")
-token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoicHJhbmF5cmFqLW1hbmdhbGEiLCJ0eXBlIjoidXNlciIsImlkIjoiZDVlZDg2OGMtNDI3Zi00MWJkLThhMTQtYzk4OWZjZmE1MWQ1In0.jM5eyA5JHSWBn6C_YeZry3R9KYtppsCe_qhXrfyQqLY"
+token = config.get(param1,"auth-token")
 
 
 # get deployment details
