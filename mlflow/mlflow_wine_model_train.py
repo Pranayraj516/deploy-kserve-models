@@ -25,7 +25,7 @@ import logging
 
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
-imestamp = int(time.time())
+timestamp = int(time.time())
 
 
 def eval_metrics(actual, pred):
