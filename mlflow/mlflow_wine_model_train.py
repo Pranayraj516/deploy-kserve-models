@@ -62,6 +62,9 @@ if __name__ == "__main__":
     train_y = train[["quality"]]
     test_y = test[["quality"]]
 
+    registered_model_name = f"wine-{timestamp}"
+    print(f"Registered model name: {registered_model_name}")
+
     alpha = float(sys.argv[1]) if len(sys.argv) > 1 else 0.5
     l1_ratio = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
 
@@ -95,7 +98,6 @@ if __name__ == "__main__":
             # which depends on the use case,
             # please refer to the doc for more information:
             # https://mlflow.org/docs/latest/model-registry.html#api-workflow
-            registered_model_name = f"wine-{timestamp}"
             mlflow.sklearn.log_model(
                 lr,
                 "model",
