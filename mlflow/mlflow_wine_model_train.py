@@ -9,6 +9,7 @@
 
 import warnings
 import sys
+import time
 
 import pandas as pd
 import numpy as np
@@ -24,6 +25,7 @@ import logging
 
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
+imestamp = int(time.time())
 
 
 def eval_metrics(actual, pred):
@@ -96,7 +98,7 @@ if __name__ == "__main__":
             mlflow.sklearn.log_model(
                 lr,
                 "model",
-                registered_model_name="ElasticnetWineModel",
+                registered_model_name=f"wine-{timestamp}",
                 signature=model_signature,
             )
         else:
