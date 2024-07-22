@@ -95,10 +95,11 @@ if __name__ == "__main__":
             # which depends on the use case,
             # please refer to the doc for more information:
             # https://mlflow.org/docs/latest/model-registry.html#api-workflow
+            registered_model_name = f"wine-{timestamp}"
             mlflow.sklearn.log_model(
                 lr,
                 "model",
-                registered_model_name=f"wine-{timestamp}",
+                registered_model_name=registered_model_name,
                 signature=model_signature,
             )
         else:
